@@ -79,20 +79,28 @@ class Inner extends StatelessWidget {
                       255, 232, 201, 240), // Light purple container color
                   borderRadius: BorderRadius.circular(20), // Rounded corners
                 ),
-                child: Container(
-                  padding: const EdgeInsets.all(30.0),
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(
-                        255, 235, 175, 250), // Button color
-                    borderRadius: BorderRadius.circular(35), // Rounded corners
-                  ),
-                  child: const Text(
-                    'Namaz Book',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 39, 1, 78),
+                child: Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/NamazBook'),
+                    child: Container(
+                      height: 110,
+                      padding: EdgeInsets.all(30.0),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(
+                            255, 235, 175, 250), // Button color
+                        borderRadius:
+                            BorderRadius.circular(35), // Rounded corners
+                      ),
+                      child: const Text(
+                        'Namaz Book',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 39, 1, 78),
+                        ),
+                      ),
                     ),
                   ),
                 ),
