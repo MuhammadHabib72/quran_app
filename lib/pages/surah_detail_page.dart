@@ -336,7 +336,7 @@ class SurahDetailPage extends StatelessWidget {
                           child: Text(
                             surahText[index],
                             style: const TextStyle(
-                              fontSize: 18,
+                              fontSize: 30,
                               fontWeight: FontWeight.bold,
                               color: Color.fromRGBO(48, 7, 89, 1),
                             ),
