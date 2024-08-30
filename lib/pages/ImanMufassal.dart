@@ -4,8 +4,11 @@ class ImageDisplayPage extends StatelessWidget {
   final String imagePath;
   final String title;
 
-  const ImageDisplayPage(
-      {super.key, required this.imagePath, required this.title});
+  const ImageDisplayPage({
+    super.key,
+    required this.imagePath,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +17,16 @@ class ImageDisplayPage extends StatelessWidget {
         title: Text(title),
         backgroundColor: const Color.fromARGB(255, 54, 8, 99),
       ),
-      backgroundColor:
-          const Color.fromARGB(255, 232, 201, 240), // Background color
       body: Center(
-        child: Image.asset(imagePath),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: InteractiveViewer(
+            boundaryMargin: const EdgeInsets.all(20.0),
+            minScale: 1.0,
+            maxScale: 4.0,
+            child: Image.asset(imagePath),
+          ),
+        ),
       ),
     );
   }
