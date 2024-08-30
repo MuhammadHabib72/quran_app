@@ -10,24 +10,23 @@ class Reading extends StatelessWidget {
           const Color.fromRGBO(229, 182, 242, 1), // Background color
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 60), // Spacing from top
+              const SizedBox(height: 40), // Spacing from top
               const Text(
                 'Quran',
                 style: TextStyle(
-                  fontSize: 28,
+                  fontSize: 38,
                   fontWeight: FontWeight.w900,
                   color: Color.fromRGBO(48, 7, 89, 1),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 5),
               Expanded(
                 child: Scrollbar(
                   thumbVisibility: true, // Always show the scroll indicator
-                  thickness: 6.0, // Thickness of the scroll indicator
+                  thickness: 7.0, // Thickness of the scroll indicator
                   radius: const Radius.circular(20.0), // Rounded edges
                   child: ListView(
                     children: [
@@ -224,6 +223,7 @@ class Reading extends StatelessWidget {
           '$title ',
           style: const TextStyle(
             fontWeight: FontWeight.bold,
+            fontSize: 25,
             color: Color.fromRGBO(48, 7, 89, 1),
           ),
         ),
@@ -231,15 +231,22 @@ class Reading extends StatelessWidget {
           translation,
           style: const TextStyle(
             fontWeight: FontWeight.w500,
+            fontSize: 18,
             color: Color.fromRGBO(157, 29, 242, 1),
           ),
         ),
         trailing: Wrap(
-          spacing: 12, // space between two icons
-          children: <Widget>[
-            Text('Chapter $number',
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+          children: [
+            RichText(
+                text: TextSpan(
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Color.fromRGBO(157, 29, 242, 1)),
+                    children: [
+                  TextSpan(text: 'Chapter '),
+                  TextSpan(text: '$number'),
+                ])),
           ],
         ),
       ),
@@ -266,29 +273,132 @@ class SurahDetailPage extends StatelessWidget {
   final List<String> surahText;
 
   const SurahDetailPage({Key? key, required this.surahText}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Surah Yasin'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: ListView.builder(
-          itemCount: surahText.length,
-          itemBuilder: (context, index) {
-            return Text(
-              surahText[index],
-              style: const TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(48, 7, 89, 1),
-              ),
-              textAlign: TextAlign.center,
-            );
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios_rounded,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
           },
         ),
+        title: const Text(
+          'Quran',
+          style: TextStyle(
+            fontFamily: "Arial",
+            color: Colors.white,
+            fontSize: 25,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+        backgroundColor: const Color.fromRGBO(141, 59, 223, 1),
+      ),
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                RichText(
+                  textAlign: TextAlign.left,
+                  text: const TextSpan(
+                    style: TextStyle(fontFamily: "Arial", color: Colors.black),
+                    children: [
+                      TextSpan(
+                        text: 'Yasin\n',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Color.fromRGBO(48, 7, 89, 1),
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Verse 36\n(Words Of God)\n\n',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color.fromRGBO(157, 29, 242, 1),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Center(
+                    child: ListView.builder(
+                      itemCount: surahText.length,
+                      itemBuilder: (context, index) {
+                        return Center(
+                          child: Text(
+                            surahText[index],
+                            style: const TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(48, 7, 89, 1),
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            bottom: 20,
+            left: 20,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color.fromRGBO(
+                    141, 59, 223, 0.975), // Background color for the circle
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(31, 255, 255, 255),
+                    blurRadius: 5,
+                    spreadRadius: 2,
+                  ),
+                ],
+              ),
+              child: IconButton(
+                icon: const Icon(Icons.menu_book, color: Colors.white),
+                onPressed: () {},
+                iconSize: 30,
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color.fromRGBO(
+                    141, 59, 223, 0.975), // Background color for the circle
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 5,
+                    spreadRadius: 2,
+                  ),
+                ],
+              ),
+              child: IconButton(
+                icon: const Icon(Icons.play_arrow, color: Colors.white),
+                onPressed: () {},
+                iconSize: 30,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
