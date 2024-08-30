@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/ImanMufassal.dart';
+import 'package:flutter_application_2/pages/ImageDisplayPage.dart';
 
 class NamazBook extends StatelessWidget {
   const NamazBook({super.key});
@@ -30,25 +30,25 @@ class NamazBook extends StatelessWidget {
               const SizedBox(height: 50),
               for (var buttonInfo in [
                 {
-                  'text': 'Eman Mufasil',
+                  'text': 'Iman Mufassal',
                   'imagePath': 'assets/Iman-e-Mufassal.png'
                 },
                 {
-                  'text': 'Eman Majmal',
+                  'text': 'Iman Majmal',
                   'imagePath': 'assets/Iman-e-Mujmal.png'
                 },
                 {'text': '6 Kalmas', 'imagePath': 'assets/6Kalmas.png'},
                 {
-                  'text': 'Duwa for entering masjid',
-                  'imagePath': 'assets/DuwaEnteringMasjid.png'
+                  'text': 'Duwa For Entering Masjid',
+                  'imagePath': 'assets/Entering-Masjid.png'
                 },
                 {
-                  'text': 'Duwa for leaving masjid',
-                  'imagePath': 'assets/DuwaLeavingMasjid.png'
+                  'text': 'Duwa For Leaving Masjid',
+                  'imagePath': 'assets/Leaving-Masjid.png'
                 },
                 {
-                  'text': 'Duwa to start wudhu',
-                  'imagePath': 'assets/DuwaStartWudhu.png'
+                  'text': 'Dua After Wudu',
+                  'imagePath': 'assets/Dua-for-Wudu.png'
                 },
               ])
                 Column(
@@ -85,7 +85,7 @@ class NamazBook extends StatelessWidget {
                               buttonInfo['text']!,
                               textAlign: TextAlign.center,
                               style: const TextStyle(
-                                fontSize: 25,
+                                fontSize: 30,
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromARGB(255, 39, 1, 78),
                               ),

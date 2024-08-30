@@ -3,7 +3,7 @@ import 'package:flutter_application_2/pages/Inner.dart';
 import 'package:flutter_application_2/pages/NamazDuas.dart';
 import 'package:flutter_application_2/pages/starting_page.dart';
 import 'package:flutter_application_2/pages/surah_detail_page.dart';
-import 'package:flutter_application_2/pages/ImanMufassal.dart';
+import 'package:flutter_application_2/pages/ImageDisplayPage.dart';
 
 void main() => runApp(QariApp());
 
@@ -23,7 +23,7 @@ class QariApp extends StatelessWidget {
         '/reading': (context) => Reading(),
         '/NamazBook': (context) => NamazBook(),
         '/ImageDisplayPage': (context) => ImageDisplayPage(
-            imagePath: "assets\Iman-e-Mufassal.png", title: "Eman Mufassal"),
+            imagePath: "assets\Iman-e-Mufassal.png", title: "Iman Mufassal"),
       },
     );
   }

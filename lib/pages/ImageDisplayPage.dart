@@ -14,8 +14,13 @@ class ImageDisplayPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         title: Text(title),
-        backgroundColor: const Color.fromARGB(255, 54, 8, 99),
+        titleTextStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+        ),
+        backgroundColor: const Color.fromARGB(255, 92, 44, 141),
       ),
       body: Center(
         child: Padding(
