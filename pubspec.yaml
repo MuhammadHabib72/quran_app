@@ -62,6 +62,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/Iman-e-Mufassal.png
+    - assets/Iman-e-Mujmal.png
+    - assets/Entering-Masjid.png
+    - assets/Leaving-Masjid.png
+    - assets/Dua-for-Wudu.png
     - assets/Masjid.png
     - assets/yaseen.csv
     
