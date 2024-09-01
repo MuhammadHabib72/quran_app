@@ -27,8 +27,8 @@ class ImageDisplayPage extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: InteractiveViewer(
             boundaryMargin: const EdgeInsets.all(20.0),
-            minScale: 1.0,
-            maxScale: 4.0,
+            minScale: 0.5, // Allow zooming out to 50% of the original size
+            maxScale: 5.0, // Allow zooming in up to 5 times the original size
             child: Image.asset(imagePath),
           ),
         ),
