@@ -30,6 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  hijri: ^3.0.0
+  islamic_hijri_calendar: ^0.0.3
+    
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,6 +41,7 @@ dependencies:
   csv: ^5.0.0
   speech_to_text: 7.0.0
   permission_handler: ^11.1.0
+  
 
 
 dev_dependencies:
