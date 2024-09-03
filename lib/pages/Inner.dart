@@ -6,8 +6,7 @@ class Inner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(
-          255, 232, 201, 240), // Light purple background color
+      backgroundColor: const Color.fromARGB(255, 232, 201, 240),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
         child: Column(
@@ -24,82 +23,99 @@ class Inner extends StatelessWidget {
                 decorationThickness: 3,
               ),
             ),
-            const SizedBox(
-                height:
-                    90), // Spacing between the "Select" text and button containers
+            const SizedBox(height: 90),
 
-            // First button container
+            // Reading Mode button container
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width *
-                    0.9, // 90% of screen width
+                width: MediaQuery.of(context).size.width * 0.9,
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(
-                      255, 232, 201, 240), // Light purple container color
-                  borderRadius: BorderRadius.circular(35), // Rounded corners
+                  color: const Color.fromARGB(255, 232, 201, 240),
+                  borderRadius: BorderRadius.circular(35),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, '/reading'),
-                    child: Container(
-                      height: 110,
-                      padding: EdgeInsets.all(30.0),
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(
-                            255, 235, 175, 250), // Button color
-                        borderRadius:
-                            BorderRadius.circular(35), // Rounded corners
-                      ),
-                      child: const Text(
-                        'Reading Mode',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 39, 1, 78),
-                        ),
+                child: GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, '/reading'),
+                  child: Container(
+                    height: 110,
+                    padding: const EdgeInsets.all(30.0),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 235, 175, 250),
+                      borderRadius: BorderRadius.circular(35),
+                    ),
+                    child: const Text(
+                      'Reading Mode',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 39, 1, 78),
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 0), // Spacing between button containers
+            const SizedBox(height: 20),
 
-            // Second button container
+            // Namaz Book button container
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width *
-                    0.9, // 90% of screen width
+                width: MediaQuery.of(context).size.width * 0.9,
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(
-                      255, 232, 201, 240), // Light purple container color
-                  borderRadius: BorderRadius.circular(20), // Rounded corners
+                  color: const Color.fromARGB(255, 232, 201, 240),
+                  borderRadius: BorderRadius.circular(20),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, '/NamazBook'),
-                    child: Container(
-                      height: 110,
-                      padding: EdgeInsets.all(30.0),
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(
-                            255, 235, 175, 250), // Button color
-                        borderRadius:
-                            BorderRadius.circular(35), // Rounded corners
+                child: GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, '/NamazBook'),
+                  child: Container(
+                    height: 110,
+                    padding: const EdgeInsets.all(30.0),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 235, 175, 250),
+                      borderRadius: BorderRadius.circular(35),
+                    ),
+                    child: const Text(
+                      'Namaz Book',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 39, 1, 78),
                       ),
-                      child: const Text(
-                        'Namaz Book',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 39, 1, 78),
-                        ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            // Islamic Calendar button container (new)
+            Center(
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.9,
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 232, 201, 240),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, '/IslamicCalendar'),
+                  child: Container(
+                    height: 110,
+                    padding: const EdgeInsets.all(30.0),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 235, 175, 250),
+                      borderRadius: BorderRadius.circular(35),
+                    ),
+                    child: const Text(
+                      'Islamic Calendar',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 42,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 39, 1, 78),
                       ),
                     ),
                   ),

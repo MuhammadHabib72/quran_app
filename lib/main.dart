@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/pages/Inner.dart';
+import 'package:flutter_application_2/pages/Islamic_Calender.dart';
 import 'package:flutter_application_2/pages/NamazDuas.dart';
 import 'package:flutter_application_2/pages/starting_page.dart';
 import 'package:flutter_application_2/pages/reading.dart';
@@ -24,6 +25,7 @@ class QariApp extends StatelessWidget {
         '/NamazBook': (context) => NamazBook(),
         '/ImageDisplayPage': (context) => ImageDisplayPage(
             imagePath: "assets\Iman-e-Mufassal.png", title: "Iman Mufassal"),
+        '/IslamicCalendar': (context) => IslamicCalendar(),
       },
     );
   }
