@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hijri/hijri_calendar.dart';
+
 import 'package:islamic_hijri_calendar/islamic_hijri_calendar.dart';
 
 class IslamicCalendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    HijriCalendar today = HijriCalendar.now();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Islamic Calendar'),
@@ -20,7 +18,7 @@ class IslamicCalendar extends StatelessWidget {
             defaultBorder: Theme.of(context)
                 .colorScheme
                 .onSurface
-                .withOpacity(.1), // Set default date border color
+                .withOpacity(.2), // Set default date border color
             highlightTextColor: Theme.of(context)
                 .colorScheme
                 .background, // Set today date text color
@@ -36,10 +34,7 @@ class IslamicCalendar extends StatelessWidget {
                 true, // Set to true if you want to use Google fonts, else false
             fontFamilyName:
                 "Lato", // Set your custom font family name or Google font name
-            getSelectedEnglishDate: (selectedDate) {
-              // Returns the date selected by user
-              print("English Date: $selectedDate");
-            },
+
             getSelectedHijriDate: (selectedDate) {
               // Returns the date selected by user in Hijri format
               print("Hijri Date: $selectedDate");
